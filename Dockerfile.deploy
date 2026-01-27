@@ -1,0 +1,27 @@
+FROM rust:1.86-slim-bookworm
+
+# Install dependencies including protobuf and clang (for bindgen)
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    pkg-config \
+    libssl-dev \
+    build-essential \
+    protobuf-compiler \
+    libprotobuf-dev \
+    cmake \
+    clang \
+    libclang-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install wasm32 target  
+RUN rustup target add wasm32-unknown-unknown
+
+# Install Linera CLI from crates.io (version 0.15.7 for Conway compatibility)
+# linera-service is the main package that includes linera CLI
+RUN cargo install linera-service@0.15.7 --locked
+
+WORKDIR /app
+
+# Entry point
+CMD ["/bin/bash"]
