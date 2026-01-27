@@ -36,8 +36,7 @@ export function LineraProvider({ children }: LineraProviderProps) {
             setError(null);
 
             // Dynamic import for @linera/client
-            // @ts-ignore
-            const module = await import('@linera/client');
+            const module = await import('@linera/client') as any;
             const LineraClient = module.LineraClient || module.default?.LineraClient || module.default;
 
             if (!LineraClient) {
