@@ -36,7 +36,13 @@ export function LineraProvider({ children }: LineraProviderProps) {
             setError(null);
 
             // Dynamic import for @linera/client
-            const { LineraClient } = await import('@linera/client');
+            // @ts-ignore
+            const module = await import('@linera/client');
+            const LineraClient = module.LineraClient || module.default?.LineraClient || module.default;
+
+            if (!LineraClient) {
+                throw new Error('Failed to import LineraClient');
+            }
 
             const lineraClient = new LineraClient({
                 nodeUrl: NODE_URL,
