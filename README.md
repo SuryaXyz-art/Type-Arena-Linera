@@ -32,8 +32,8 @@
 
 | Property | Value |
 |----------|-------|
-| **Application ID** | `[To be updated after deployment]` |
-| **Chain ID** | `[To be updated after deployment]` |
+| **Application ID** | `[c103c66fa5e765940f564b13b8419c399d9657f9f0b14d07c83d147a7078436c]` |
+| **Chain ID** | `[fa32beacf5d0faedef5b77d83ce5feb8418dd3b86ec970238864d0cf3e2a3a1]` |
 | **Testnet URL** | `https://testnet-conway.linera.net` |
 | **SDK Version** | `0.15.7` |
 
