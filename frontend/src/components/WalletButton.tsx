@@ -71,9 +71,16 @@ export default function WalletButton() {
     }
 
     return (
-        <button onClick={connect} className="btn-primary flex items-center gap-2">
-            <Wallet className="w-4 h-4" />
-            <span className="hidden sm:inline">Connect Wallet</span>
-        </button>
+        <div className="flex flex-col items-end">
+            <button onClick={connect} className="btn-primary flex items-center gap-2">
+                <Wallet className="w-4 h-4" />
+                <span className="hidden sm:inline">Connect Wallet</span>
+            </button>
+            {error && (
+                <span className="text-xs text-red-400 mt-2 bg-red-500/10 px-2 py-1 rounded">
+                    {error}
+                </span>
+            )}
+        </div>
     );
 }

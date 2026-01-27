@@ -41,8 +41,8 @@ export default function Layout() {
                                         key={link.path}
                                         to={link.path}
                                         className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${isActive
-                                                ? 'bg-purple-500/20 text-purple-300'
-                                                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                            ? 'bg-purple-500/20 text-purple-300'
+                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
                                             }`}
                                     >
                                         <Icon className="w-4 h-4" />
@@ -81,8 +81,8 @@ export default function Layout() {
                                     to={link.path}
                                     onClick={() => setMobileMenuOpen(false)}
                                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                            ? 'bg-purple-500/20 text-purple-300'
-                                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                        ? 'bg-purple-500/20 text-purple-300'
+                                        : 'text-gray-400 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
                                     <Icon className="w-5 h-5" />
@@ -109,6 +109,9 @@ export default function Layout() {
                         </div>
                         <div className="text-gray-500 text-sm">
                             Built for WaveHack · Type Arena © 2024
+                        </div>
+                        <div className="text-[10px] text-gray-800 opacity-20 hover:opacity-100 transition-opacity">
+                            Config: {import.meta.env.VITE_LINERA_NODE_URL ? 'Direct' : 'Proxy'} | {import.meta.env.VITE_LINERA_GRAPHQL_URL?.slice(0, 20)}...
                         </div>
                     </div>
                 </div>
