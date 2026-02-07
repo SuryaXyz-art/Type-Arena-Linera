@@ -1,3 +1,4 @@
+# Dockerfile.deploy - Clean and verified for Docker Compose deployment
 FROM rust:1.86-slim-bookworm
 
 # Install dependencies including protobuf and clang (for bindgen)
